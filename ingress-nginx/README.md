@@ -1,4 +1,4 @@
-deploy.yaml,搜索Deployment （dnsPolicy）并修改
+打开deploy.yaml,搜索Deployment （dnsPolicy）并修改
 1. dnsPolicy换成ClusterFirstWithHostNet
 2. 新加 hostNetwork: true
 3. 新加 nodeName: k8snode1 ，指定部署到k8snode1
