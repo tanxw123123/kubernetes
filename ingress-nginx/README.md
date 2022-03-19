@@ -1,3 +1,22 @@
+deploy.yaml,搜索Deployment （dnsPolicy）并修改
+1. dnsPolicy换成ClusterFirstWithHostNet
+2. 新加 hostNetwork: true
+3. 新加 nodeName: k8snode1 ，指定部署到k8snode1
+4. 新加
+tolerations: 
+- key: node-role.kubernetes.io/master
+  operator: Exists
+
+如下：
+spec:              
+  dnsPolicy: ClusterFirstWithHostNet  #既能使用宿主机DNS，又能使用集群DNS
+  hostNetwork: true                   #与宿主机共享网络
+  nodeName: k8snode1              #设置只能在k8snode1节点运行
+  tolerations:  					  #设置能容忍master污点
+  - key: node-role.kubernetes.io/master
+    operator: Exists
+
+Kubernetes-v1.22+ 需要使用 ingress-nginx>=1.0，因为 networking.k8s.io/v1beta 已经移除
 ### Support Versions table 
 
 | Ingress-NGINX version | k8s supported version        | Alpine Version | Nginx Version |
