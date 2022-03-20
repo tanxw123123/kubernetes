@@ -1,4 +1,4 @@
-1. 创建pv
+1. 创建pv  
 vim storage-pv.yaml
 ```
 apiVersion: v1
@@ -16,7 +16,7 @@ spec:
   hostPath:
     path: "/data/apps/nginx/html"   #存储路径，手动创建目录 
 ```
-2. 创建pvc声明
+2. 创建pvc声明  
 vim storage-pvc.yaml
 ```
 apiVersion: v1
@@ -31,7 +31,7 @@ spec:
     requests:
       storage: 3Gi
 ```
-3. nginx的pod使用pvc
+3. nginx的pod使用pvc  
 vim nginx-deployment.yaml
 ```
 apiVersion: apps/v1
