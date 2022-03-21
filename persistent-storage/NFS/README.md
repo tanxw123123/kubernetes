@@ -16,7 +16,8 @@
 开机自动挂载，在/etc/fstab添加，
 ```
 10.203.0.10:/nfs/nginx /data/apps/nginx/html nfs rw 0 0  
-10.203.0.10为nfs服务器ip  
+
+## 10.203.0.10为nfs服务器ip  
 
 # mount -a 
 ```
